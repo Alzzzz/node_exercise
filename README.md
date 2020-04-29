@@ -1,7 +1,7 @@
 # node_exercise
 node JS exercise
 
-## 学笔记  
+## 学习笔记  
 ### koa-router:  
 1、跳转路由，可以通过/:category/:id来获取url中的category和id来重新定位路由。  
 2、路由嵌套
