@@ -2,7 +2,7 @@
   "name": "node_exercise",
   "version": "1.0.0",
   "description": "",
-  "main": "route_jwt_auth/app.js",
+  "main": "src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +14,7 @@
     "koa": "^2.11.0",
     "koa-bodyparser": "^4.3.0",
     "koa-jwt": "^3.6.0",
+    "koa-nunjucks-2": "^3.0.2",
     "koa-router": "^8.0.8"
   }
 }
