@@ -1,10 +1,22 @@
 module.exports={
-    login: async (ctx,next)=>{
-        let user = ctx.request.body;
-        if (user.userName === 'sz' && user.passWord === '123456'){
-            ctx.response.body = `<h1>Login Success! Hello ${user.userName}</h1>`
+    login: async (userName,passWord)=>{
+        if (userName === 'sz' && passWord === '123456'){
+            data = {
+                status:0,
+                data:{
+                    title:"个人中心",
+                    content:"欢迎进入个人中心"
+                }
+            }
         } else {
-            ctx.response.body = `<h1>Login Failed!</h1>`
+            data={
+                status:-1,
+                data:{
+                    title:"登录失败",
+                    content:"请输入正确的账号信息"
+                }
+            }
         }
+        return data;
     }
 };

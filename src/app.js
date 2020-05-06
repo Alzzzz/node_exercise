@@ -4,6 +4,11 @@ const router = require('./router');
 const parserBody = require('koa-bodyparser');
 const nunjucks = require('koa-nunjucks-2');
 const path = require('path');
+const staticFiles = require('koa-static');
+
+app.use(staticFiles(path.resolve(__dirname, "./public"), {
+   maxage: 30*24*60*60*1000
+}));
 
 app.use(parserBody());
 app.use(nunjucks({

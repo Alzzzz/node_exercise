@@ -8,7 +8,7 @@ function GoRouter(app) {
     router.get('/home', HomeController.home);
     router.get('/home/:user/:id', HomeController.homeParams);
     router.get('/user', HomeController.user);
-    router.post('/user/login', ServicesController.login);
+    router.post('/user/login', HomeController.login);
 
     app.use(router.routes(), router.allowedMethods());
 }
