@@ -23,3 +23,9 @@ outer.use('/user', inner.routers(), detail.allowedMethods());
 ### 逻辑分层  
 通过router路由进行数据分发，可抽象中间层用于逻辑调用，如登录模块，post请求到user/login先指向的是controller中的login再由其进行service的调用，获取数据进行跳转处理，如果成功跳转页面，失败直接直接修改提示。  
 但其中各处理都未进行跳转，只是进行了当前页面的重新render
+
+### ctx.render is not a function
+记录一下该BUG，原因主要是因为js的运行是有顺序的，如果先初始化了Router，在访问时先执行了Router但其后面的ctx.render的render方法还没有绑定到上下文上，就会造成该问题。
+
+解决方法：
+`将Router移动到其他的中间件后面去即可`
