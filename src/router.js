@@ -3,6 +3,8 @@ const router = new Router();
 const HomeController = require('./controllers/home');
 const ServicesController = require('./services/home')
 
+const {getAllCustomers, getCustomerById, getCustomerByName, createCustomer} = require('./db')
+
 function GoRouter(app) {
     router.get('/', HomeController.index);
     router.get('/home', HomeController.home);
