@@ -29,3 +29,9 @@ outer.use('/user', inner.routers(), detail.allowedMethods());
 
 解决方法：
 `将Router移动到其他的中间件后面去即可`
+
+### MySql数据库
+mac电脑安装MySql后需要在系统偏好中进行initial，否则会一只显示port是0  
+  
+windows电脑需要安装一下VC++2019的相关支持，否贼bench无法安装。  
+数据库表创建可以直接使用bench创建，也可以是用代码同步，其中很关键的第三方库是Sequelize用来处理MySql的各种操作，Sequelize is a promise-based Node.js ORM for Postgres。
